@@ -1,0 +1,11 @@
+#!/bin/bash
+cd ~/projects/django_project/
+echo "Старт проекта DJANGO TUTORIAL:"
+source env/bin/activate
+echo "- виртуальное окружение активировано"
+cd ./finance/
+source setenv.sh
+echo "- переменные окружения импортированы"
+echo "- текущая ветка репозитория выбрана:"
+git branch
+echo "Good luck!"
