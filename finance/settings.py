@@ -88,18 +88,6 @@ DATABASES = {
     }
 }
 
-# alter role django_user set client_encoding to 'utf8';
-# alter role django_user set default_transaction_isolation to 'read committed';
-# alter role django_user set timezone to 'Europe/Moscow'; -- не делал на локалке
-# ALTER USER username CREATEDB;
-# GRANT CONNECT ON DATABASE postgres TO django_user;
-# GRANT SELECT ON ALL TABLES IN SCHEMA public TO django_user;
-
-
-
-
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
