@@ -100,6 +100,7 @@ class QuestionIndexViewsTests(TestCase):
             [question2, question1],
         )
 
+
 class QuestionDetailViewsTests(TestCase):
     def test_future_question(self):
         future_question = create_question(question_text="Future question", days=30)
