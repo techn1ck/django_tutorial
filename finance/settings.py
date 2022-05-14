@@ -56,7 +56,7 @@ ROOT_URLCONF = 'finance.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'finance.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DJANGO_DB'),
-        'USER': os.getenv('DJANGO_DB_USER'),
+        'ENGINE':   'django.db.backends.postgresql',
+        'NAME':     os.getenv('DJANGO_DB'),
+        'USER':     os.getenv('DJANGO_DB_USER'),
         'PASSWORD': os.getenv('DJANGO_DB_USER_PASSWORD'),
-        'HOST': os.getenv('DJANGO_DB_HOST'),
-        'PORT': os.getenv('DJANGO_DB_PORT'),
+        'HOST':     os.getenv('DJANGO_DB_HOST'),
+        'PORT':     os.getenv('DJANGO_DB_PORT'),
     }
 }
 
