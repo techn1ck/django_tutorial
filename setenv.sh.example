@@ -5,3 +5,5 @@ export DJANGO_DB_USER=''
 export DJANGO_DB_USER_PASSWORD=''
 export DJANGO_DB_HOST='' # 127.0.0.1
 export DJANGO_DB_PORT='' # 5432
+
+export DJANGO_DEBUG_MODE='True'

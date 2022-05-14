@@ -21,12 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-f($+^())^a6@xv+j5q!tu6cunen09i)s5g36nkdzf*(j#5e1r#'
-# SECRET_KEY = 'django-insecure-_r3ra0$$%r@=^j7sb5^n1z=d9dh8c_!b51_^o+_)imul*8@qj-'
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG_MODE')
 
 ALLOWED_HOSTS = []
 
@@ -58,7 +56,7 @@ ROOT_URLCONF = 'finance.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,26 +77,14 @@ WSGI_APPLICATION = 'finance.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DJANGO_DB'),
-        'USER': os.getenv('DJANGO_DB_USER'),
+        'ENGINE':   'django.db.backends.postgresql',
+        'NAME':     os.getenv('DJANGO_DB'),
+        'USER':     os.getenv('DJANGO_DB_USER'),
         'PASSWORD': os.getenv('DJANGO_DB_USER_PASSWORD'),
-        'HOST': os.getenv('DJANGO_DB_HOST'),
-        'PORT': os.getenv('DJANGO_DB_PORT'),
+        'HOST':     os.getenv('DJANGO_DB_HOST'),
+        'PORT':     os.getenv('DJANGO_DB_PORT'),
     }
 }
-
-# alter role django_user set client_encoding to 'utf8';
-# alter role django_user set default_transaction_isolation to 'read committed';
-# alter role django_user set timezone to 'Europe/Moscow'; -- не делал на локалке
-# ALTER USER username CREATEDB;
-# GRANT CONNECT ON DATABASE postgres TO django_user;
-# GRANT SELECT ON ALL TABLES IN SCHEMA public TO django_user;
-
-
-
-
-
 
 
 # Password validation
